@@ -10,7 +10,7 @@ public class PaymentAddressMapper {
         if(paymentAddressDTO == null && userRepository == null) return null;
         PaymentAddressEntity paymentAddressEntity = new PaymentAddressEntity();
         paymentAddressEntity.setAddress(paymentAddressDTO.getAddress());
-        UserEntity user = userRepository.findByEmail(paymentAddressDTO.getUserEmail());
+        UserEntity user = userRepository.findUserByEmail(paymentAddressDTO.getUserEmail());
         if (user == null) {
             throw new RuntimeException("User not found with email: " + paymentAddressDTO.getUserEmail());
         }
