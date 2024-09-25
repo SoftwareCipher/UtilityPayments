@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -26,8 +27,10 @@ public class UserService {
         return UserMapper.toDTO(userEntity);
     }
 
-
-    public ResponseEntity<UserDTO> allUsers(){
-        return (ResponseEntity<UserDTO>) userRepository.findAll();
+    public List<UserDTO> getAllUsers() {
+        List<UserEntity> userEntities = userRepository.findAll();
+        return userEntities.stream()
+                .map(UserMapper::toDTO)
+                .collect(Collectors.toList());
     }
 }
