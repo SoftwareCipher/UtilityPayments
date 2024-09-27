@@ -1,7 +1,6 @@
 package com.utilitypayments.repo;
 
 import com.utilitypayments.models.UserEntity;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
