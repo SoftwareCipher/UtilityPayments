@@ -2,30 +2,14 @@ package com.utilitypayments.mapper;
 
 import com.utilitypayments.dto.PaymentAddressDTO;
 import com.utilitypayments.models.PaymentAddressEntity;
-import com.utilitypayments.models.UserEntity;
-import com.utilitypayments.repo.UserRepository;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
-public class PaymentAddressMapper {
-    public static PaymentAddressEntity toEntity(PaymentAddressDTO paymentAddressDTO, UserRepository userRepository){
-        if(paymentAddressDTO == null && userRepository == null) return null;
-        PaymentAddressEntity paymentAddressEntity = new PaymentAddressEntity();
-        paymentAddressEntity.setAddress(paymentAddressDTO.getAddress());
-        UserEntity user = userRepository.findUserByEmail(paymentAddressDTO.getUserEmail());
-        if (user == null) {
-            throw new RuntimeException("User not found with email: " + paymentAddressDTO.getUserEmail());
-        }
-        paymentAddressEntity.setUser(user);
-        return paymentAddressEntity;
-    }
+@Mapper(componentModel = "spring")
+public interface PaymentAddressMapper {
+    @Mapping(source = "userEntity.id", target = "userId")
+    PaymentAddressDTO toDTO(PaymentAddressEntity address);
 
-    public static PaymentAddressDTO toDto(PaymentAddressEntity entity){
-        if(entity == null) return null;
-
-        PaymentAddressDTO paymentAddressDTO = new PaymentAddressDTO();
-        paymentAddressDTO.setAddress(entity.getAddress());
-        if(entity.getUser() != null){
-            paymentAddressDTO.setUserEmail(entity.getUser().getEmail());
-        }
-        return paymentAddressDTO;
-    }
+    @Mapping(source = "userId", target = "userEntity.id")
+    PaymentAddressEntity toEntity(PaymentAddressDTO addressDTO);
 }

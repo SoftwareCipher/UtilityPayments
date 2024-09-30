@@ -1,19 +1,28 @@
 package com.utilitypayments.models;
 
+import com.utilitypayments.mapper.PaymentAddressMapper;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
+@Entity
 @Table(name = "pattern_payment")
 public class PatternPaymentEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String namePattern;
-    private String Iban;
+
+    private String iban;
+
     private String infoAboutPattern;
+
     @ManyToOne
-    @JoinColumn(name = "user_entity", referencedColumnName = "id")
-    private UserEntity user;
+    @JoinColumn(name = "payment_address_id")
+    private PaymentAddressEntity paymentAddress;
 }

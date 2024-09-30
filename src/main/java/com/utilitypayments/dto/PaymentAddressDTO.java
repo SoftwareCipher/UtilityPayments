@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class PaymentAddressDTO {
-    private String address;
-    private String userEmail;
+    private Long id;
+    private String addressLine;
+    private Long userId;
 }
