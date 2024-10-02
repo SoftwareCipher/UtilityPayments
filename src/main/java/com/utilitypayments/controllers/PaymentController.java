@@ -1,6 +1,5 @@
 package com.utilitypayments.controllers;
 
-import com.utilitypayments.dto.PaymentAddressDTO;
 import com.utilitypayments.dto.PaymentDTO;
 import com.utilitypayments.service.PaymentService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,5 +23,4 @@ public class PaymentController {
         return paymentService.getAllPayments();
     }
 
-    // Дополнительные методы
 }

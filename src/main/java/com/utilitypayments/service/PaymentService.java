@@ -1,10 +1,7 @@
 package com.utilitypayments.service;
 
-import com.utilitypayments.dto.PaymentAddressDTO;
 import com.utilitypayments.dto.PaymentDTO;
-import com.utilitypayments.mapper.PaymentAddressMapper;
 import com.utilitypayments.mapper.PaymentMapper;
-import com.utilitypayments.repo.PaymentAddressRepository;
 import com.utilitypayments.repo.PaymentRepository;
 import org.springframework.stereotype.Service;
 
@@ -30,5 +27,4 @@ public class PaymentService {
                 .collect(Collectors.toList());
     }
 
-    // Дополнительные методы
 }

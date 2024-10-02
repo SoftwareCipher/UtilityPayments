@@ -1,11 +1,8 @@
 package com.utilitypayments.models;
 
-import com.utilitypayments.mapper.PaymentAddressMapper;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @Entity

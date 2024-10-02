@@ -1,7 +1,6 @@
 package com.utilitypayments.controllers;
 
 import com.utilitypayments.dto.UserDTO;
-import com.utilitypayments.models.UserEntity;
 import com.utilitypayments.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
