@@ -2,14 +2,12 @@ package com.utilitypayments.controllers;
 
 import com.utilitypayments.dto.PaymentDTO;
 import com.utilitypayments.service.PaymentService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/payments")
+@RequestMapping("/api/pay")
 public class PaymentController {
 
     private final PaymentService paymentService;
@@ -18,9 +16,13 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
 
-    @GetMapping
+    @GetMapping("/payments")
     public List<PaymentDTO> getAllPayments() {
         return paymentService.getAllPayments();
     }
 
+    @PostMapping("/create")
+    public PaymentDTO createPayment(@RequestBody PaymentDTO paymentDTO){
+        return paymentService.createPayment(paymentDTO);
+    }
 }

@@ -3,6 +3,7 @@ package com.utilitypayments.service;
 import com.utilitypayments.dto.PaymentDTO;
 import com.utilitypayments.mapper.PaymentMapper;
 import com.utilitypayments.repo.PaymentRepository;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,4 +28,12 @@ public class PaymentService {
                 .collect(Collectors.toList());
     }
 
+    public PaymentDTO createPayment(PaymentDTO paymentDTO){
+            return null;
+    }
+
+    @Scheduled(fixedRate = 1000)
+    public void UpdatePaymentStatues(){
+
+    }
 }
