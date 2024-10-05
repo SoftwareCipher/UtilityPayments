@@ -8,9 +8,9 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface PatternPaymentMapper {
 
-    @Mapping(source = "userPaymentAddress.id", target = "userPaymentAddressId")
+    @Mapping(source = "paymentAddress.id", target = "userPaymentAddressId")
     PatternPaymentDTO toDTO(PatternPaymentEntity template);
 
-    @Mapping(source = "userPaymentAddressId", target = "userPaymentAddress.id")
+    @Mapping(source = "userPaymentAddressId", target = "paymentAddress.id")
     PatternPaymentEntity toEntity(PatternPaymentDTO templateDTO);
 }
