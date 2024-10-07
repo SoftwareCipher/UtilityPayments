@@ -73,15 +73,7 @@ This flow simulates a user registering, setting up payment addresses, defining p
 
 ## Technologies Used
 - Java (JDK 8 or above)
-- Database: [Your DB choice here, e.g., PostgreSQL]
-- Frameworks: [Specify any frameworks, e.g., Spring Boot]
-
----
-
-## Running the Project
-1. Clone the repository.
-2. Set up your database connection.
-3. Run the application.
-4. Follow the demonstration flow to test the system.
+- Database:PostgreSQL
+- Frameworks: Spring Boot
 
 ---
