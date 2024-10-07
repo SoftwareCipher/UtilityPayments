@@ -2,7 +2,6 @@ package com.utilitypayments.service;
 
 import com.utilitypayments.dto.PatternPaymentDTO;
 import com.utilitypayments.mapper.PatternPaymentMapper;
-import com.utilitypayments.mapper.PaymentAddressMapper;
 import com.utilitypayments.models.PatternPaymentEntity;
 import com.utilitypayments.models.PaymentAddressEntity;
 import com.utilitypayments.repo.PatternPaymentRepository;

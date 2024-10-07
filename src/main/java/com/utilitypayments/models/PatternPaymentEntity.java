@@ -3,7 +3,6 @@ package com.utilitypayments.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
 @Data
 @Entity
 @Table(name = "pattern_payment")
