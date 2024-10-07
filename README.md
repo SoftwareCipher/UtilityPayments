@@ -85,6 +85,3 @@ This flow simulates a user registering, setting up payment addresses, defining p
 4. Follow the demonstration flow to test the system.
 
 ---
-
-## License
-[MIT License](./LICENSE)
